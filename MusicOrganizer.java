@@ -84,8 +84,10 @@ public class MusicOrganizer
     }
     
     public void listAllFiles(){
+        int cont = 1;
         for (String filename : files){
-            System.out.println(filename);
+            System.out.println(cont + ". " + filename);
+            cont++;
         }
     }
 }
