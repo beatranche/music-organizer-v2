@@ -102,7 +102,19 @@ public class MusicOrganizer
         if (cont == 0){
             System.out.println("Error. No hay canciones con el texto seleccionado");
         }
-    }    
+    }  
+    
+    public void playSampleArtist(String artist){
+        ArrayList<String> sample = new ArrayList<>();
+        for (String filename : files){
+            if (filename.contains(artist)){
+                sample.add(filename);
+            }
+        }
+        for (String canciones : sample){
+              player.playSample(canciones);
+        }
+    }
 }
 
 

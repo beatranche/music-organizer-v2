@@ -15,6 +15,8 @@ public class prueba
 {
     private MusicOrganizer musicOrg1;
 
+    
+
     /**
      * Default constructor for test class prueba
      */
@@ -31,9 +33,9 @@ public class prueba
     public void setUp()
     {
         musicOrg1 = new MusicOrganizer();
-        musicOrg1.addFile("Shakira - loba.mp3");
-        musicOrg1.addFile("Cafe Quijano.mp3");
-        musicOrg1.addFile("Rihanna - Stay.mp3");
+        musicOrg1.addFile("audio/BigBillBroonzy-BabyPleaseDontGo1.mp3");
+        musicOrg1.addFile("audio/BlindBlake-EarlyMorningBlues.mp3");
+        musicOrg1.addFile("audio/BlindLemonJefferson-matchBoxBlues.mp3");
     }
 
     /**
