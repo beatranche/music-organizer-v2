@@ -92,10 +92,17 @@ public class MusicOrganizer
     }
     
     public void listMatching(String searchString){
+        int cont = 0;
         for (String filename : files){
             if (filename.contains(searchString)){
+                cont++;
                 System.out.println(filename);
-            }
+            } 
         }
-    }
+        if (cont == 0){
+            System.out.println("Error. No hay canciones con el texto seleccionado");
+        }
+    }    
 }
+
+
