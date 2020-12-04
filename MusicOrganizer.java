@@ -84,11 +84,13 @@ public class MusicOrganizer
     }
     
     public void listAllFiles(){
-        int cont = 1;
-        for (String filename : files){
-            System.out.println(cont + ". " + filename);
-            cont++;
+       int index = 0;
+       while (index < files.size()){
+          String filename = files.get(index);
+           System.out.println(filename);
+           index ++;
         }
+       
     }
     
     public void listMatching(String searchString){
@@ -115,6 +117,7 @@ public class MusicOrganizer
               player.playSample(canciones);
         }
     }
+    
 }
 
 
