@@ -129,11 +129,11 @@ public class MusicOrganizer
         int index = 0;
         boolean searching = true;
         int aDevolver = 0;
-        while (index < files.size()){
+        while (index < files.size() && searching){
             String filename = files.get(index);
             if (filename.contains(searchString)){
                 aDevolver = index;
-                index = files.size();
+                searching = false;
             }
             index ++;
         }
