@@ -13,7 +13,7 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -22,7 +22,7 @@ public class MusicOrganizer
         files = new ArrayList<String>();
         player = new MusicPlayer();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -31,7 +31,7 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -40,7 +40,7 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -52,7 +52,7 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
@@ -82,17 +82,17 @@ public class MusicOrganizer
     {
         player.stop();
     }
-    
+
     public void listAllFiles(){
-       int index = 0;
-       while (index < files.size()){
-          String filename = files.get(index);
-           System.out.println(index + ". " + filename);
-           index ++;
+        int index = 0;
+        while (index < files.size()){
+            String filename = files.get(index);
+            System.out.println(index + ". " + filename);
+            index ++;
         }
-       
+
     }
-    
+
     public void listMatching(String searchString){
         int cont = 0;
         for (String filename : files){
@@ -105,7 +105,7 @@ public class MusicOrganizer
             System.out.println("Error. No hay canciones con el texto seleccionado");
         }
     }  
-    
+
     public void playSampleArtist(String artist){
         ArrayList<String> sample = new ArrayList<>();
         for (String filename : files){
@@ -114,10 +114,32 @@ public class MusicOrganizer
             }
         }
         for (String canciones : sample){
-              player.playSample(canciones);
+            player.playSample(canciones);
         }
     }
-    
-}
 
+    /**
+     * Localiza el índice del primer archivo que se corresponde con
+     * la cadena de búsqueda indicada .
+     * @param searchString La cadena que hay que buscar.
+     * @return El índice de la primera aparición o -1 si
+     * no se encuentra ninguna correspondencia
+     */
+    public int findFirst(String searchString){
+        int index = 0;
+        int aDevolver = 0;
+        while (index < files.size()){
+            String filename = files.get(index);
+            if (filename.contains(searchString)){
+                aDevolver = index;
+            }
+            else{
+                aDevolver = -1;
+            }
+            index ++;
+        }
+        return aDevolver;
+    }
+
+}
 
